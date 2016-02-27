@@ -2,14 +2,21 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
 use Illuminate\Http\Request;
+
+use App\Task;
 
 class TodoController extends Controller {
 
+	public function getTodos()
+	{
+		$todos=Task::all();
+		return $todos;
+	}
+
 	public function index()
 	{
-		
+		return view('todos.index');
 	}
 
 	
