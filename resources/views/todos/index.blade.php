@@ -4,7 +4,7 @@
 	<div class="container" ng-controller="TodoCtrl">
 		<div class="row">
 			<div class="col-md-12">
-				<h3>Laravel Angular CRUD <a href="#" class="btn btn-success btn-sm">Create New Task</a></h3>
+				<h3>Laravel Angular CRUD <a href="#modal-id" data-toggle="modal" class="btn btn-success btn-sm">Create New Task</a></h3>
 				
 				<table class="table">
 					<thead>
@@ -31,5 +31,31 @@
 				</table>
 			</div>
 		</div>
+		
+		{{-- insert modal --}}
+			<div class="modal fade" id="modal-id">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+							<h4 class="modal-title">Add a task</h4>
+						</div>
+						<div class="modal-body">
+							
+								<label for="name">Enter a task name</label>
+								<input class="form-control" type="text" name="name" ng-model="Todo.name">
+							
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+							<button type="button" class="btn btn-primary" ng-click="create(Todo.name)">Add</button>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		{{-- end insert modal --}}
+
+
 	</div>
 @endsection

@@ -5,6 +5,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 use App\Task;
+use Response;
+use Input;
 
 class TodoController extends Controller {
 
@@ -27,7 +29,13 @@ class TodoController extends Controller {
 
 	public function store()
 	{
-		
+		$input=[
+			'name'=>Input::get('name'),
+			'status'=>0,
+		];
+		Task::create($input);
+		$data = ['success' => false, 'msg' => 'Delete fail'];
+        return Response::json($data, 200);
 	}
 
 	
