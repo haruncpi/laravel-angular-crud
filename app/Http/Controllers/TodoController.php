@@ -34,7 +34,7 @@ class TodoController extends Controller {
 			'status'=>0,
 		];
 		Task::create($input);
-		$data = ['success' => false, 'msg' => 'Delete fail'];
+		$data = ['success' => true, 'msg' => 'successfully added'];
         return Response::json($data, 200);
 	}
 
@@ -47,13 +47,20 @@ class TodoController extends Controller {
 	
 	public function edit($id)
 	{
-		
+		$todo=Task::find($id);
+		return $todo;
 	}
 
 	
 	public function update($id)
 	{
-		
+		$input=[
+				'name'=>Input::get('name'),
+				'status'=>Input::get('status'),
+		];
+		Task::find($id)->update($input);
+		$data = ['success' => true, 'msg' => 'update success'];
+		return Response::json($data, 200);
 	}
 
 
