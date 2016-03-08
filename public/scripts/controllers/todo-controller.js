@@ -35,5 +35,18 @@ myApp.controller('TodoCtrl', function ($scope, $http, SERVICEURL) {
                 $('#edit-modal').modal('hide');
             })
     }
+
+    // DELETE request to todos/{id}
+    $scope.delete = function (id) {
+        if (confirm('Are you sure?')) {
+            $http.delete(SERVICEURL + '/todos/' + id + '')
+                    .success(function (data) {
+                        $scope.init();
+
+                    })
+        }
+
+    }
+
     $scope.init();
 })

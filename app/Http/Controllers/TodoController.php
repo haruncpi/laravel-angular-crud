@@ -66,6 +66,9 @@ class TodoController extends Controller {
 
 	public function destroy($id)
 	{
+		$todo=Task::find($id)->delete();
+		$data = ['success' => true, 'msg' => 'delete successfully'];
+		return Response::json($data, 200);
 		
 	}
 

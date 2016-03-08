@@ -45,11 +45,12 @@
                             <td>
                                 <a href="#edit-modal" data-toggle="modal" ng-click="edit(todo.id)"
                                    class="btn btn-warning btn-xs">Edit</a>
-                                <a href="#" class="btn btn-danger btn-xs">Delete</a>
+                                <a href="#" class="btn btn-danger btn-xs" ng-click="delete(todo.id)">Delete</a>
                             </td>
                         </tr>
                         </tbody>
                     </table>
+
                 </div>
             </div>
         </div>
