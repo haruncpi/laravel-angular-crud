@@ -4,8 +4,7 @@
     <div class="container" ng-controller="TodoCtrl">
         <div class="row">
             <div class="col-md-12">
-                <h3>Laravel Angular CRUD</h3>
-                <hr>
+                
                 <div class="col-md-3">
 
                     <div class="panel panel-primary">
@@ -27,7 +26,7 @@
 
                 </div>
                 <div class="col-md-9">
-                    <table class="table table-striped table-bordered">
+                    <table class="table table-striped table-bordered table-hover">
                         <thead>
                         <tr>
                             <th>ID</th>
@@ -41,7 +40,11 @@
                         <tr ng-repeat="todo in todos">
                             <td>@{{todo.id}}</td>
                             <td>@{{todo.name}}</td>
-                            <td>@{{todo.status==1? 'Completed':'Incomplete'}}</td>
+                            <td>
+                                <span class="mybudge @{{todo.status==1? 'green':'red'}}">
+                                    @{{todo.status==1? 'Completed':'Incomplete'}}
+                                </span>
+                            </td>
                             <td>
                                 <a href="#edit-modal" data-toggle="modal" ng-click="edit(todo.id)"
                                    class="btn btn-warning btn-xs">Edit</a>

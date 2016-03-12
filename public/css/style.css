@@ -1,0 +1,15 @@
+.mybudge{
+	width: 130px;
+    padding: 6px;
+    border-radius: 4px;
+    font-size: 12px;
+}
+.green{
+	background: #2ecc71;
+	color:white;
+	
+}
+.red{
+	background: #e74c3c;
+	color:white;
+}

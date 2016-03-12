@@ -1,6 +1,6 @@
-myApp.constant('SERVICEURL', 'http://localhost/laravel-angular-crud/public');
+myApp.constant('SERVICEURL', baseUrl);
 
-myApp.controller('TodoCtrl', function ($scope, $http, SERVICEURL) {
+myApp.controller('TodoCtrl', function ($scope, $http, SERVICEURL,toastr) {
     // for fetch all data
     $scope.init = function () {
         $http.get(SERVICEURL + '/todo-list').success(function (data) {
@@ -15,6 +15,11 @@ myApp.controller('TodoCtrl', function ($scope, $http, SERVICEURL) {
             .success(function (data) {
                 $scope.init();
                 $scope.Todo = null;
+                toastr.success('Record Created',{
+                    progressBar:true,
+                    closeButton: true,
+                    timeOut: 2000,
+                });
             })
     }
 
@@ -33,6 +38,12 @@ myApp.controller('TodoCtrl', function ($scope, $http, SERVICEURL) {
             .success(function (data) {
                 $scope.init();
                 $('#edit-modal').modal('hide');
+
+                toastr.success('Record Updated',{
+                    progressBar:true,
+                    closeButton: true,
+                    timeOut: 2000,
+                });
             })
     }
 
@@ -42,8 +53,13 @@ myApp.controller('TodoCtrl', function ($scope, $http, SERVICEURL) {
             $http.delete(SERVICEURL + '/todos/' + id + '')
                     .success(function (data) {
                         $scope.init();
+                        toastr.success('Record Deleted',{
+                            progressBar:true,
+                            closeButton: true,
+                            timeOut: 2000,
+                        });
 
-                    })
+            })
         }
 
     }
