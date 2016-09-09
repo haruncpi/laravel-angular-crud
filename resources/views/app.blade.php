@@ -9,7 +9,7 @@
 
 	<link href="css/app.css" rel="stylesheet">
 	<link href="css/style.css" rel="stylesheet">
-	<link rel="stylesheet" href="https://npmcdn.com/angular-toastr/dist/angular-toastr.css" />
+	<link rel="stylesheet" href="https://unpkg.com/angular-toastr/dist/angular-toastr.css" />
 	
 	<!-- Fonts -->
 	<link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
@@ -39,7 +39,7 @@
 
 	{{-- angular --}}
 	<script src="js/angular.min.js"></script>
-	<script src="https://npmcdn.com/angular-toastr/dist/angular-toastr.tpls.js"></script>
+	<script src="https://unpkg.com/angular-toastr/dist/angular-toastr.tpls.js"></script>
 
 	<script src="scripts/app.js"></script>
 	<script src="scripts/controllers/todo-controller.js"></script>
